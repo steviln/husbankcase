@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Husbank Case</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="/style/style.css">
+        <script type="text/javascript" src="/js/javascript.js"></script>
+            <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div id="form-zone">
+                <h1>Fyll ut skjema for å sende inn søknad</h1>
+                <div class="row">
+                    <div class="col-md-5">Navn</div>
+                    <div class="col-md-5">Fnr nummer</div>
+                    <div class="col-md-2"><button onclick="javascript:add();"> + </button></div>
+                </div>
+                <div id="laantaker-div">
+                    <div class="laantaker-linje row">
+                        <div class="col-md-5"><input name="navn[]" class="borrower-name form-control" value="" type="text" /></div>
+                        <div class="col-md-5"><input name="fnr[]" class="borrower-fnr form-control" value="" type="text" /></div>
+                        <div class="col-md-2"><button onclick="javascript:remove(this);"> - </button></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="behov" class="form-label">Behov</label>
+                    <input type="text" class="form-control" id="behov" />
+                </div>
+                <div class="mb-3">
+                    <label for="lanebelop" class="form-label">Lånebeløp</label>
+                    <input type="number" class="form-control" id="lanebelop" />
+                </div>
+                <div class="mb-3">
+                    <label for="lopetid" class="form-label">Løpetid i måneder</label>
+                    <input type="number" class="form-control" id="lopetid" />
+                </div>
+                <div class="mb3">
+                    <label for="avdradsfriPeriode">avdgradsfri periode i måneder</label>
+                    <input type="number" class="form-control" id="avdradsfriPeriode" />
+                </div>
+                <div class="mb-3">
+                    <label for="type" class="form-label">Type</label>
+                    <select id="type">
+                        <option value="ubestemt">Ubestemt</option>
+                        <option value="annuitet">Annuitet</option>
+                        <option value="annet">Annet</option>
+                    </select>
+                </div>
+                <button onclick="javascript:sendApplication();">Send</button>
+            </div>
+            <div id="response-zone" style="display:none;">
+                
+            </div>
+        </div>
+        <div id="borrower-element-holder" style="display:none;">
+            <div class="laantaker-linje row">
+                        <div class="col-md-5"><input name="navn[]" class="borrower-name form-control" value="" type="text" /></div>
+                        <div class="col-md-5"><input name="fnr[]" class="borrower-fnr form-control" value="" type="text" /></div>
+                        <div class="col-md-2"><button onclick="javascript:remove(this);"> - </button></div>
+             </div>
+        </div>
+    </body>
+</html>
